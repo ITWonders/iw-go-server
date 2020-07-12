@@ -10,13 +10,10 @@ import (
 // usage: <program> <ssl-directory> <cert-crt-filename> <cert-key-filename>
 func main() {
 
-	currentDir, _ := os.Getwd()
-	fmt.Println("currentDir:" + currentDir)
-
 	sslCertCrtName, sslCertKeyName := setCertPath()
 
-	// create file server handler
-	fs := http.FileServer(http.Dir(currentDir))
+	// create file server handler serving current directory
+	fs := http.FileServer(http.Dir("."))
 
 	// start HTTP server with `fs` as the default handler
 	fmt.Println("server run with :9000 and :443")
