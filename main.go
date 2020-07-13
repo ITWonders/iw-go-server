@@ -8,7 +8,12 @@ import (
 	"os"
 )
 
-// usage: <program> <ssl-directory> <cert-crt-filename> <cert-key-filename>
+// usage:
+// with default parameter
+// <program>
+//
+// to specify different path and filename
+// <program> -d <ssl-directory> -c <cert-crt-filename> -k <cert-key-filename>
 func main() {
 	homeDir, err := os.UserHomeDir()
 	if err != nil {
